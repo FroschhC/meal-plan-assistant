@@ -6,29 +6,29 @@ git_source(:github) do |repo_name|
 end
 
 gem 'pg', '~> 0.18'
-gem 'rails'
 gem 'puma', '~> 3.7'
-gem 'sass-rails', '~> 5.0'
+gem 'rails'
 gem 'coffee-rails', '~> 4.2'
-gem 'uglifier', '>= 1.3.0'
+gem 'sass-rails', '~> 5.0'
 gem 'devise'
+gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
-gem 'jquery-rails'
 gem 'factory_bot'
+gem 'jquery-rails'
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'web-console', '>= 3.3.0'
   gem 'spring'
+  gem 'web-console', '>= 3.3.0'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'pry-rails'
   gem 'capybara'
-  gem 'rspec-rails'
+  gem 'pry-rails'
   gem 'heroku'
+  gem 'rspec-rails'
   gem 'launchy'
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
