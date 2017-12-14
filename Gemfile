@@ -25,6 +25,8 @@ end
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'coveralls', require: false
+  gem 'factory_bot_rails'
   gem 'capybara'
   gem 'pry-rails'
   gem 'heroku'
