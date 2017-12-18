@@ -1,4 +1,4 @@
-# Item Model 
+# Item Model
 class Item < ApplicationRecord
   validates :user_id, presence: true
   validates :name, presence: true
