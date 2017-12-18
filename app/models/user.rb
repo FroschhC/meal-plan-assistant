@@ -5,4 +5,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
   validates :user_name, presence: true
+
+  has_many :meals
+  has_many :items
 end
