@@ -21,10 +21,10 @@ feature 'sign up', %{
 
   scenario 'required information is not supplied' do
     visit new_user_registration_path
-     click_button 'Sign Up'
+    click_button 'Sign Up'
 
-     # expect(page).to have_content("Text-field can not be blank")
-     # expect(page).to have_content("Invalid Username or password")
+    # expect(page).to have_content("Text-field can not be blank")
+    # expect(page).to have_content("Invalid Username or password")
   end
 
   scenario 'password confirmation does not match confirmtion' do
