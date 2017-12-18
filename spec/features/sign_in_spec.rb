@@ -12,15 +12,15 @@ feature 'sign in', %{
     visit new_user_session_path
     fill_in 'Email', with: user.email
     fill_in 'Password', with: 'Password'
-    click_button 'Log in'
+    click_button 'Sign In'
 
-    # expect(page).to have_content("z")
+    expect(page).to have_content("Sign Out Signed in successfully.")
   end
 
   scenario 'required information is not supplied' do
     visit new_user_session_path
-    click_button 'Log in'
+    click_button 'Sign In'
 
-    # expect(page).to have_content('Invalid Email or password')
+    expect(page).to have_content('Invalid Email or password')
   end
 end

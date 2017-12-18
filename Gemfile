@@ -31,6 +31,7 @@ group :development, :test do
   gem 'heroku'
   gem 'launchy'
   gem 'pry-rails'
+  gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
