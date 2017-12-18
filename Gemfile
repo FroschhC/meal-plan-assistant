@@ -26,16 +26,15 @@ end
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
-  gem 'pry-rails'
+  gem 'coveralls', require: false
+  gem 'factory_bot_rails'
   gem 'heroku'
-  gem 'rspec-rails'
   gem 'launchy'
+  gem 'pry-rails'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
   gem 'shoulda-matchers', require: false
   gem 'valid_attribute'
-end
-
-group :test do
-  gem 'coveralls', require: false
 end
 
 group :production do
