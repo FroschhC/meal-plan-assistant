@@ -1,7 +1,7 @@
 # Sign In tests
 require 'rails_helper'
 
-feature 'sign in',%{
+feature 'sign in', %{
   As a account holder
   I want to sign in
   So that I can gain access to my account
