@@ -20,7 +20,7 @@ feature 'sign in', %{
   scenario 'required information is not supplied' do
     visit new_user_session_path
     click_button 'Log in'
-    #
+
     # expect(page).to have_content('Invalid Email or password')
   end
 end
