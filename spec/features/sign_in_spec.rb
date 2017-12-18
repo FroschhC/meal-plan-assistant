@@ -14,7 +14,7 @@ feature 'sign in', %{
     fill_in 'Password', with: 'Password'
     click_button 'Sign In'
 
-    expect(page).to have_content("Sign Out Signed in successfully.")
+    expect(page).to have_content('Sign Out Signed in successfully.')
   end
 
   scenario 'required information is not supplied' do
