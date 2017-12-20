@@ -1,12 +1,17 @@
 const Request = window.superagent;
 import React, { Component } from 'react';
+import ItemTile from './ItemTile'
 
 class Test extends React.Component {
   constructor() {
     super();
     this.state = {
       item: [],
-      items:[]
+      items:[],
+      calories: '',
+      protein: '',
+      fats: '',
+      carbohydrates: ''
     };
   }
 
@@ -47,6 +52,13 @@ class Test extends React.Component {
   }
 
   render() {
+    // let items = this.state.item.map((item, i) => {
+    //   return(
+    //     <Item />
+    //   )
+    // }
+
+
     let items = this.state.item.map((item, i) => {
       let calories = ''
       let fat = ''

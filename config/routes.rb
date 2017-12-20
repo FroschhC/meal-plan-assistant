@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  root 'static_pages#index'
+  root 'users#show'
   devise_for :users
   resources :users, only: [:show, :index, :destroy]
-  resources :meals 
+  resources :meals do
+    resources :items
+  end
 
   namespace :api do
     namespace :v1 do
-      resources :meals, only: [:index, :show, :create, :new, :destroy] do
+      resources :meals, only: [:index, :show, :create, :new, :destroy, :edit] do
         resources :items, only: [:index, :show, :create, :destroy] do
         end
       end

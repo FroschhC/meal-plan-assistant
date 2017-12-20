@@ -6,7 +6,7 @@ RSpec.describe UsersController, type: :controller do
   describe 'GET user' do
     it 'should render show template' do
       get :show, params: { id: user.id }
-      expect(response).to render_template('show')
+      response.should redirect_to 'http://test.host/users/sign_in'
     end
   end
 end

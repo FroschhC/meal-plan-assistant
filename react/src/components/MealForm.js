@@ -1,33 +1,34 @@
 import React, { Component } from 'react';
 import TextInputField from '../components/TextInputField';
 import SelectInputField from '../components/SelectInputField';
-import Test from '../components/Test';
 
 class MealForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       title: '',
-      type: '',
-      itemOne: '',
-      itemTwo: '',
-      itemThree: ''
+      category: ''
     }
   this.onChange=this.onChange.bind(this)
   this.handleFormSubmit=this.handleFormSubmit.bind(this)
+  this.handleClearForm=this.handleClearForm.bind(this)
   }
 
   handleFormSubmit(event) {
-  event.preventDefault()
-  let newMeal = {
-    title: this.state.title,
-    type: this.state.type,
-    itemOne: this.state.itemOne,
-    itemTwo: this.props.itemTwo,
-    itemThree: this.state.itemThree
+    event.preventDefault();
+    let newMeal = {
+      title: this.state.title,
+      category: this.state.category,
+    }
+    this.props.addNewMeal(newMeal);
+    this.handleClearForm();
   }
-  this.props.addNewMeal(newMeal);
-  this.handleClearForm();
+
+  handleClearForm(event) {
+  this.setState({
+    title: '',
+    category: ''
+  })
   }
 
   onChange(event) {
@@ -46,30 +47,12 @@ class MealForm extends Component {
             onChange={this.onChange}
           /> <br/>
           <SelectInputField
-            id="type"
-            label="Meal Type:"
-            name="type"
-            value={this.state.type}
+            id="category"
+            label="Meal Category:"
+            name="category"
+            value={this.state.category}
             onChange={this.onChange}
-          />
-          <br/>
-          <Test
-            id="itemOne"
-            label="Item One"
-            name="item"
-            value={this.state.itemOne}
-            onChange={this.onChange}
-          />
-          {/* <Test
-              id="itemTwo"
-              label="Item Two"
-              name="item"
-            />
-            <Test
-             id="itemThree"
-             label="Item Three"
-             name="item"
-           /> */}
+          /> <br/>
            <input type="submit" value="Submit" />
          </form>
       </div>
