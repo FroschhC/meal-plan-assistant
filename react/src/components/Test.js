@@ -52,13 +52,7 @@ class Test extends React.Component {
   }
 
   render() {
-    // let items = this.state.item.map((item, i) => {
-    //   return(
-    //     <Item />
-    //   )
-    // }
-
-
+    debugger
     let items = this.state.item.map((item, i) => {
       let calories = ''
       let fat = ''
@@ -80,6 +74,7 @@ class Test extends React.Component {
       })
       return( <option key={i} value={item.food_name}>Serving: {item.serving_qty} {item.serving_unit}{calories}{protein}{fat}{carbohydrates}</option> )
     })
+
     return (
       <div>
         {this.props.label}
