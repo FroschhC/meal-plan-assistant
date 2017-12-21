@@ -44,9 +44,15 @@ class MealsShowContainer extends Component {
     let mealId = this.state.id
     return(
       <div>
+        <div className="grid-x align-center">
         <Link to="/">Back to User Page</Link>
+        </div>
+        <div className="grid-x align-center">
         <h1>Title: {this.state.title}</h1>
+        </div>
+        <div className="grid-x align-center">
         <h2>Type: {this.state.category}</h2>
+        </div>
         <ItemFormContainer />
       </div>
     )

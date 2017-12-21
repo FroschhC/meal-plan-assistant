@@ -1,8 +1,18 @@
-<h2>Sign up</h2>
-
+<div class="grid-x grid-padding-x callout">
+  <div class="medium-5 large-4 cell">
+  <h4>Who are we?<h4>
+  <h6>ewqqweruqweoriuwoieruiqoweruoiqeuwroiuqweropiuqweoir</h6>
+  <h4>How can we help you?</h4>
+  <h6>sadjfhdfjkhakjsdfhkjashdfkjsfsadfsadfasfdasdfadfasdf</h6>
+  <h4>What is our mission?</h4>
+  <h6>dfsfsdafasdfadsfasdfasdfasdfasdfasdfasdfasdfasdfasdf</h6>
+  </div>
+  <div class="medium-2 large-4 cell">
+  </div>
+  <div class="medium-5 large-4 cell callout align-center">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+    <h2>Sign up</h2>
   <div class="field">
     <%= f.label :first_name, 'First Name' %>
     <%= f.text_field :first_name, autofocus: true %>
@@ -32,7 +42,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, 'Password Confirmation' %><br />
+    <%= f.label :password_confirmation, 'Password Confirmation' %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
@@ -40,5 +50,8 @@
     <%= f.submit "Sign Up" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+<div class="grid-x align-center">
+<%= link_to "Already a Member? Sign In Here", new_user_session_path %>
+</div>
+</div>
+</div>

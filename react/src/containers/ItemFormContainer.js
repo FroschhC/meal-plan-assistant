@@ -10,8 +10,13 @@ class MealFormContainer extends Component {
     this.state = {
       item: ''
     }
+    this.handleFormSubmit=this.handleFormSubmit.bind(this)
   }
 
+  handleFormSubmit(){
+
+  }
+  
   render(){
     return(
       <div>

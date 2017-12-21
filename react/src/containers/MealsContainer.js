@@ -20,6 +20,7 @@ class MealsContainer extends Component {
   }
 
   deleteMeal(id){
+  if(confirm('Are you sure you want to delete this meal?')) {
   fetch(`/api/v1/meals/${id}`, {
     method: 'DELETE',
     credentials: 'same-origin'
@@ -40,7 +41,7 @@ class MealsContainer extends Component {
   })
   .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
-
+}
 
   componentDidMount(){
     this.getData(); }
@@ -82,8 +83,12 @@ class MealsContainer extends Component {
       <div>
         <MealFormContainer
           getData={this.getData}/>
-        <h1>Meals Container</h1>
+      <div className="callout">
+        <h1 className="grid-x align-center">Meals Container</h1>
+    <div className="grid-x align-center">
           {meals}
+        </div>
+        </div>
       </div>
     )
   }

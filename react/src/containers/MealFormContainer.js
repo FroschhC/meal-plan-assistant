@@ -41,11 +41,15 @@ class MealFormContainer extends Component {
   render(){
 
     return(
-      <div>
+      <div className="callout">
+        <div className="grid-x align-center">
         <h1>Create a new meal</h1>
+      </div>
+      <div className="grid-x align-center">
         <MealForm
           addNewMeal = {this.addNewMeal}
         />
+      </div>
       </div>
     )
   }
