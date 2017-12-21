@@ -15,6 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
 gem 'factory_bot'
 gem 'jquery-rails'
+gem 'foundation-rails'
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
