@@ -1,6 +1,4 @@
 # comment for codeclimate
 class Api::V1::ItemsController < ApplicationController
-  def new
-
-  end
+  def new; end
 end

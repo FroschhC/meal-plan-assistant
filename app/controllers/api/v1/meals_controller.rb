@@ -8,7 +8,7 @@ class Api::V1::MealsController < ApplicationController
   end
 
   def show
-    render json: { meal: Meal.find(params[:id])}
+    render json: { meal: Meal.find(params[:id]) }
   end
 
   def new
@@ -28,7 +28,7 @@ class Api::V1::MealsController < ApplicationController
       @meal.user = @user
     end
     if @meal.save
-      render json: { meal: @meal}
+      render json: { meal: @meal }
     else
       render json: { error: @meal.errors.full_messages }, status: :unprocessable_entity
     end
@@ -36,7 +36,6 @@ class Api::V1::MealsController < ApplicationController
 
   def edit
     @meal = Meal.find(params[:id])
-    binding.pry
   end
 
   private
