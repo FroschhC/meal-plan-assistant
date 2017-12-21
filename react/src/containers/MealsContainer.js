@@ -1,19 +1,89 @@
 import React, { Component } from 'react';
 import MealFormContainer from './MealFormContainer';
 import { Link } from 'react-router';
+import MealTile from '../components/MealTile';
+import { browserHistory} from 'react-router';
 
 class MealsContainer extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      meals: []
+    }
+    this.getData=this.getData.bind(this)
+    this.handleDelete=this.handleDelete.bind(this)
+    this.deleteMeal=this.deleteMeal.bind(this)
   }
 
-  render(){
+  handleDelete(id){
+    this.deleteMeal(id);
+  }
 
+  deleteMeal(id){
+  fetch(`/api/v1/meals/${id}`, {
+    method: 'DELETE',
+    credentials: 'same-origin'
+  })
+  .then(response => {
+    if (response.ok) {
+      return response;
+    } else {
+      let errorMessage = `${response.status} (${response.statusText})`,
+      error = new Error(errorMessage);
+      throw(error);
+    }
+  })
+  .then(response => response.json())
+  .then(body => {
+      this.getData();
+      browserHistory.push('/')
+  })
+  .catch(error => console.error(`Error in fetch: ${error.message}`));
+  }
+
+
+  componentDidMount(){
+    this.getData(); }
+
+  getData() {
+  fetch('/api/v1/meals', {
+    credentials: 'same-origin'
+  })
+  .then(response => {
+    if (response.ok) {
+      return response;
+    } else {
+      let errorMessage = `${response.status} (${response.statusText})`,
+      error = new Error(errorMessage);
+      throw(error);
+    }
+  })
+  .then(response => response.json())
+  .then(body => {
+    this.setState({ meals: body['meals']})
+  })
+  .catch(error => console.error(`Error in fetch: ${error.message}`));
+}
+
+  render(){
+    let meals = this.state.meals.map((meal, i) => {
+      return(
+        <MealTile
+          key={meal.id}
+          id={meal.id}
+          title={meal.title}
+          category={meal.category}
+          handleDelete={this.handleDelete}
+        />
+      )
+    })
 
     return(
       <div>
+        <MealFormContainer
+          getData={this.getData}/>
         <h1>Meals Container</h1>
-        <Link to='/meals/new'> Add a Meal </Link>
+          {meals}
       </div>
     )
   }
