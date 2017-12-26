@@ -8,7 +8,8 @@ class MealsContainer extends Component {
   constructor(props){
     super(props);
     this.state = {
-      meals: []
+      meals: [],
+      items: []
     }
     this.getData=this.getData.bind(this)
     this.handleDelete=this.handleDelete.bind(this)
@@ -61,7 +62,10 @@ class MealsContainer extends Component {
   })
   .then(response => response.json())
   .then(body => {
-    this.setState({ meals: body['meals']})
+    this.setState({
+      meals: body['meals'],
+      items: body['items']
+    })
   })
   .catch(error => console.error(`Error in fetch: ${error.message}`));
 }
@@ -75,6 +79,7 @@ class MealsContainer extends Component {
           title={meal.title}
           category={meal.category}
           handleDelete={this.handleDelete}
+          items={this.state.items}
         />
       )
     })
