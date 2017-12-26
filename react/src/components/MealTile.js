@@ -10,6 +10,7 @@ const MealTile = props => {
         <h4 className="card-divider">{props.title}</h4>
       </Link>
         <h6 className="card-section">{props.category}</h6>
+        <h6 className="card-section">{props.category}</h6>
       <button className="button" onClick={props.handleDelete.bind(this, props.id)}>Delete Meal</button>
     </div>
   </div>
