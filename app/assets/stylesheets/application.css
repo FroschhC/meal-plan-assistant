@@ -16,9 +16,46 @@
 
  */
 .card {
-  width: 200px;
+  width: 400px;
+  height: 500px;
+  margin: 5px;
+  border-radius: 1rem;
+}
+
+.card-divider{
+  padding: 4px;
+  margin-bottom: 4px;
+}
+
+.card-section {
+  height: 80px;
+  overflow-y: scroll;
 }
 
 .user-name {
-  font-size: 6em;
+  font-size: 5em;
+}
+
+.subcat {
+  font-size: 1em;
+  background-color: #e7ffd6;
+  border-radius: 1rem;
+}
+
+.serving{
+  font-size: .8em;
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.meal-item {
+  font-size: 1em;
+  text-align: left;
 }
