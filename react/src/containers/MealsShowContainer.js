@@ -108,31 +108,33 @@ class MealsShowContainer extends Component {
       )
     })
     return(
-      <div>
-        <div className="grid-x align-center">
+      <div className="grid-x align-center">
+        <div className="small-12 center">
         <Link to="/">Back to User Page</Link>
         </div>
-        <div className="grid-x align-center">
-        <h1>Title: {this.state.title}</h1>
+        <div className="grid-x callout card">
+        <div className="grid-x align-center card-divider">
+        <h1>{this.state.title}</h1>
         </div>
-        <div className="grid-x align-center">
-        <h2>Type: {this.state.category}</h2>
+        <div className="grid-x align-center subcat">
+        <h4>{this.state.category}</h4>
         </div>
-        <div>
+        <div className='callout'>
           {allitems}
         </div>
-        <div className="grid-x align-center">
-          Total Items in Meal: {totalItems} ||
-          Total Calories: {calories} ||
-          Total Protein: {protein} ||
-          Total Carbohydrates: {carbohydrates} ||
-          Total Fat: {fat}
+        <div className="grid-x align-center callout">
+          <h6>Total Items in Meal: {totalItems} ||</h6>
+          <h6>Total Calories: {calories} ||</h6>
+          <h6>Total Protein: {protein} ||</h6>
+          <h6>Total Carbohydrates: {carbohydrates} ||</h6>
+          <h6>Total Fat: {fat}</h6>
         </div>
         <ItemFormContainer
           mealId={this.state.id}
           getData={this.getData}
         />
       </div>
+    </div>
     )
   }
 }

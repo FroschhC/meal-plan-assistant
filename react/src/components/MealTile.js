@@ -27,13 +27,13 @@ const MealTile = props => {
 
   return(
     <div>
-    <div className='card large-3 medium-6 small-12'>
+    <div className='card meal-card large-3 medium-6 small-12'>
       <Link to={`/meals/${props.id}`}>
       <div className="card-divider grid-x">
         <h4 className="small-12 cell center">{props.title}</h4><h4 className="small-12 cell center subcat">{props.category}</h4>
       </div>
       </Link>
-        <div className="card-section">{items}</div>
+        <div className="card-section meal-card-section">{items}</div>
         <h6 className="card-divider align-center">Items: {totalItems}</h6>
         <h6 className="card-divider align-center">Calories: {calories}</h6>
         <h6 className="card-divider align-center">Protein: {protein}</h6>
