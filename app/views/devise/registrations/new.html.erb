@@ -45,10 +45,12 @@
     <%= f.label :password_confirmation, 'Password Confirmation' %>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
+<div class="grid-x align-center">
   <div class="actions">
     <%= f.submit "Sign Up" %>
+</div>
   </div>
+</br>
 <% end %>
 <div class="grid-x align-center">
 <%= link_to "Already a Member? Sign In Here", new_user_session_path %>

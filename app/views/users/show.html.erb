@@ -2,6 +2,10 @@
 <h1 class="user-name"><%= @user.user_name %></h1>
 </div>
 <div class="grid-x align-center">
+<img class="avatar grid-x align-center pro-photo" src="<%= @user.avatar %>"/>
+</div>
+</div>
+<div class="grid-x align-center">
 <%= link_to "Edit your profile", edit_user_registration_path %>
 </div>
 <div id='app'></div>
