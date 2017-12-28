@@ -88,7 +88,7 @@ class MealsContainer extends Component {
         <MealFormContainer
           getData={this.getData}/>
       <div className="callout">
-        <h1 className="grid-x align-center">Meals Container</h1>
+        <h1 className="grid-x align-center">My Meals</h1>
     <div className="grid-x align-center">
           {meals}
         </div>

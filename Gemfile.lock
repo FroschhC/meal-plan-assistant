@@ -61,6 +61,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.2.1)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     case_transform (0.2)
       activesupport
     coderay (1.1.2)
@@ -146,7 +150,7 @@ GEM
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
     netrc (0.10.3)
-    nio4r (2.1.0)
+    nio4r (2.2.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
@@ -261,7 +265,7 @@ GEM
     tins (1.16.3)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    uglifier (4.0.2)
+    uglifier (4.1.0)
       execjs (>= 0.3.0, < 3)
     valid_attribute (2.0.0)
     warden (1.2.7)
@@ -284,6 +288,7 @@ DEPENDENCIES
   active_model_serializers
   byebug
   capybara
+  carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
   coveralls
   devise

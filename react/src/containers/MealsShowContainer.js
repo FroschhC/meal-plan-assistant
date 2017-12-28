@@ -108,11 +108,12 @@ class MealsShowContainer extends Component {
       )
     })
     return(
+    <div>
       <div className="grid-x align-center">
         <div className="small-12 center">
         <Link to="/">Back to User Page</Link>
         </div>
-        <div className="grid-x callout card">
+        <div className="grid-x callout card whole-meal">
         <div className="grid-x align-center card-divider">
         <h1>{this.state.title}</h1>
         </div>
@@ -122,13 +123,15 @@ class MealsShowContainer extends Component {
         <div className='callout'>
           {allitems}
         </div>
-        <div className="grid-x align-center callout">
-          <h6>Total Items in Meal: {totalItems} ||</h6>
-          <h6>Total Calories: {calories} ||</h6>
-          <h6>Total Protein: {protein} ||</h6>
-          <h6>Total Carbohydrates: {carbohydrates} ||</h6>
-          <h6>Total Fat: {fat}</h6>
+        <div className="grid-x align-center callout card-divider">
+          <h6 className="grid-x align-center red">Total Calories: {calories}</h6>
+          <h6 className="grid-x align-center green"> Total Protein: {protein}</h6>
+          <h6 className="grid-x align-center blue">Total Carbohydrates: {carbohydrates}</h6>
+          <h6 className="grid-x align-center yellow">Total Fat: {fat}</h6>
         </div>
+      </div>
+    </div>
+      <div>
         <ItemFormContainer
           mealId={this.state.id}
           getData={this.getData}

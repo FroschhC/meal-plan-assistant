@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem "active_model_serializers"
+gem 'carrierwave', '~> 1.0'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'rails'
