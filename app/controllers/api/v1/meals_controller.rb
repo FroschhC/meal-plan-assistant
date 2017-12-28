@@ -4,10 +4,7 @@ class Api::V1::MealsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    render json: {
-      meals: current_user.meals.order(:created_at).reverse,
-      items: Item.all
-    }
+    render json:  current_user.meals.order(:created_at).reverse
   end
 
   def show

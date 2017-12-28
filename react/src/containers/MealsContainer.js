@@ -63,8 +63,7 @@ class MealsContainer extends Component {
   .then(response => response.json())
   .then(body => {
     this.setState({
-      meals: body['meals'],
-      items: body['items']
+      meals: body['meals']
     })
   })
   .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -79,7 +78,7 @@ class MealsContainer extends Component {
           title={meal.title}
           category={meal.category}
           handleDelete={this.handleDelete}
-          items={this.state.items}
+          items={meal.items}
         />
       )
     })
@@ -89,7 +88,7 @@ class MealsContainer extends Component {
         <MealFormContainer
           getData={this.getData}/>
       <div className="callout">
-        <h1 className="grid-x align-center">Meals Container</h1>
+        <h1 className="grid-x align-center">My Meals</h1>
     <div className="grid-x align-center">
           {meals}
         </div>
