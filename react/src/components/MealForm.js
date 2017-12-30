@@ -37,23 +37,25 @@ class MealForm extends Component {
 
   render() {
     return(
-      <div className="callout">
+      <div className="callout form">
         <form onSubmit={this.handleFormSubmit}>
           <TextInputField
             id="title"
-            label="Meal Title:"
+            label="Meal Title"
             name="title"
             value={this.state.title}
             onChange={this.onChange}
           />
           <SelectInputField
             id="category"
-            label="Meal Category:"
+            label="Meal Category"
             name="category"
             value={this.state.category}
             onChange={this.onChange}
           /> <br/>
-          <input type="submit" value="Submit" />
+          <div className="grid-x align-center">
+          <input className="form-button button" type="submit" value="Submit" />
+        </div>
          </form>
       </div>
     )

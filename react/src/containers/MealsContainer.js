@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MealFormContainer from './MealFormContainer';
+import MealPlanContainer from './MealPlanContainer';
 import { Link } from 'react-router';
 import MealTile from '../components/MealTile';
 import { browserHistory} from 'react-router';
@@ -87,12 +88,18 @@ class MealsContainer extends Component {
       <div>
         <MealFormContainer
           getData={this.getData}/>
-      <div className="callout">
-        <h1 className="grid-x align-center">My Meals</h1>
+        <div className="meal-plan-strip">
+          <MealPlanContainer
+          />
+        </div>
+        <div className="outside-meal-container">
+    <h1 className="grid-x align-center">My Meals</h1>
+      <div className="grid-x align-center meal-container">
     <div className="grid-x align-center">
           {meals}
         </div>
         </div>
+      </div>
       </div>
     )
   }

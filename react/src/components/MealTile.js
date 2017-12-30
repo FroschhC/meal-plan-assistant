@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Draggable, {DraggableCore} from 'react-draggable';
 
 const MealTile = props => {
 
 
   let items = props.items.map((item, i) => {
     return(
-      <div className="card-divider grid-x" key={i}><h6 className="meal-item small-6 cell" >{item.name}</h6><h6 className="serving small-6 cell">{item.serving}</h6></div>
+      <div className="card-divider grid-x each-item" key={i}><h6 className="meal-item small-6 cell" >{item.name}</h6><h6 className="serving small-6 cell">{item.serving}</h6></div>
     )
   })
 
@@ -33,12 +34,14 @@ const MealTile = props => {
         <h4 className="small-12 cell center">{props.title}</h4><h4 className="small-12 cell center subcat">{props.category}</h4>
       </div>
       </Link>
-        <div className="card-section meal-card-section">{items}</div>
-        <h6 className="card-divider align-center">Items: {totalItems}</h6>
-        <h6 className="card-divider align-center">Calories: {calories}</h6>
-        <h6 className="card-divider align-center">Protein: {protein}</h6>
-        <h6 className="card-divider align-center">Fat: {fat}</h6>
-        <h6 className="card-divider align-center">Carbs: {carbohydrates}</h6>
+        <div className="card-section meal-card-section items-section">{items}</div>
+      <div className="nut-facts">
+        <h6 className="card-divider align-center items-strip">Total Items: {totalItems}</h6>
+        <h6 className="card-divider align-center red">Calories: {calories}</h6>
+        <h6 className="card-divider align-center green">Protein: {protein}</h6>
+        <h6 className="card-divider align-center blue">Carbs: {carbohydrates}</h6>
+        <h6 className="card-divider align-center yellow">Fat: {fat}</h6>
+      </div>
       <button className="button" onClick={props.handleDelete.bind(this, props.id)}>Delete Meal</button>
     </div>
   </div>
