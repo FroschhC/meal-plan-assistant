@@ -18,9 +18,15 @@
 .meal-card {
   width: 300px;
   height: 400px;
-  margin: 5px;
+  margin: 8px;
   border-radius: 1rem;
   border: 2px solid #8e8e8e;
+  transition: transform .7s
+}
+
+.meal-card:hover {
+  transform: scale(1.2);
+  border: 4px solid #8e8e8e;
 }
 
 .top-bar{
@@ -73,6 +79,7 @@
   font-size: 1em;
   text-align: left;
 }
+
 .meal-item-names {
   font-size: 1.5em;
   text-align: left;
@@ -139,6 +146,12 @@
 
 .grey {
   background-color: #f7f7f7;
+  transition: transform .7s
+}
+
+.grey:hover {
+  transform: scale(1.1);
+  border: 4px solid #8e8e8e;
 }
 
 .light-red {
@@ -197,7 +210,7 @@
 .outside-meal-container {
     background: #DED5C4;
     padding: 1px;
-    margin: 5% 2%;
+    margin: 1% 2%;
     border: 2px solid #8e8e8e;
 }
 .item-delete {
@@ -232,7 +245,7 @@
 .meal-form {
   background-color: #DED5C4;
   padding: 2rem;
-  border-radius: 1rem;
+  /*border-radius: 1rem;*/
   margin-top: 1rem;
   margin-bottom: 3rem;
   border: 2px solid #8e8e8e;
@@ -246,13 +259,14 @@
 
 .meal-plan-strip {
     background-color: #305973;
-    margin: 0% 1%;
+    margin-left: 2%;
+      border-radius: 1rem;
 }
 
 .meal-plan-title {
   background-color: #DED5C4;
   border: 2px solid #8e8e8e;
-  padding: 1px;
+  border-radius: 1rem;
 }
 
 .cook-background {
@@ -267,8 +281,9 @@
 
 .users-nav {
   background-color: #305973;
-  /*float:center;
-  width: 50%;*/
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
 }
 
 body {
@@ -284,4 +299,55 @@ body {
 
 .item-button{
   width: 100%;
+}
+
+.name {
+  margin: 1%;
+}
+
+.meal-plan-card {
+  margin: 2rem;
+}
+
+#newMealButton {
+  font-family: Georgia;
+  font-size: 1.5rem;
+  background-color: #fcbda6;
+  width: 20rem;
+  height: 5rem;
+  border-radius: 1rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+#newMealButton:hover {
+  padding-right: 75px;
+  background-color: #EF7E56;
+  border: 2px solid #8e8e8e;
+}
+
+#newMealButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: right;
+  transition: 0.5s;
+}
+
+#newMealButton span:after {
+  content: '  \00bb';
+  position: static;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#newMealButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#newMeal {
+    display: none;
 }

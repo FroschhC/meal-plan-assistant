@@ -27,7 +27,7 @@ const MealPlanTile = props => {
   })
 
   return(
-    <div>
+    <div className="meal-plan-card">
     <div className='card meal-plan-card large-3 medium-6 small-12'>
       <Link to={`/meals/${props.id}`}>
       <div className="card-divider grid-x">

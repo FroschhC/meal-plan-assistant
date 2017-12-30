@@ -70,16 +70,18 @@ class MealPlanContainer extends Component {
     })
 
     return(
+      <div className="callout">
+        <h1 className="grid-x align-center">My Meal Plan</h1>
       <div className="meal-plan-strip">
-        <h1 className="grid-x align-center meal-plan-title">My Meal Plan</h1>
         {meals}
-        <div className="grid-x align-center callout card-divider">
+        <div className="grid-x align-center card-divider">
           <h6 className="grid-x align-center red">Total Calories: {calories}</h6>
           <h6 className="grid-x align-center green"> Total Protein: {protein}</h6>
           <h6 className="grid-x align-center blue">Total Carbohydrates: {carbohydrates}</h6>
           <h6 className="grid-x align-center yellow">Total Fat: {fat}</h6>
         </div>
       </div>
+    </div>
     )
   }
 }

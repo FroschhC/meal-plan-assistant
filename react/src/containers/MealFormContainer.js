@@ -41,7 +41,7 @@ class MealFormContainer extends Component {
   render(){
 
     return(
-      <div>
+      <div id="newMeal">
         <div className="grid-x align-center">
       <div className="meal-form">
         <h1>Create a new meal</h1>

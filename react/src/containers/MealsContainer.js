@@ -10,11 +10,24 @@ class MealsContainer extends Component {
     super(props);
     this.state = {
       meals: [],
-      items: []
+      items: [],
     }
     this.getData=this.getData.bind(this)
     this.handleDelete=this.handleDelete.bind(this)
     this.deleteMeal=this.deleteMeal.bind(this)
+    this.toggleForm=this.toggleForm.bind(this)
+  }
+
+  toggleForm(event){
+    let mealForm = document.getElementById('newMeal');
+    let displaySetting = mealForm.style.display;
+    if (displaySetting == 'block') {
+      mealForm.style.display = 'none';
+      // newMealButton.innerHTML = 'Add New Meal'
+    } else {
+      mealForm.style.display = 'block';
+      // newMealButton.innerHTML = 'Hide Meal Form'
+    }
   }
 
   handleDelete(id){
@@ -86,11 +99,15 @@ class MealsContainer extends Component {
 
     return(
       <div>
-        <MealFormContainer
-          getData={this.getData}/>
         <div className="meal-plan-strip">
           <MealPlanContainer
           />
+        </div>
+          <MealFormContainer
+            getData={this.getData}/>
+
+        <div className="grid-x align-center">
+          <button className="button" id="newMealButton" onClick={this.toggleForm}><span>Add New Meal</span></button>
         </div>
         <div className="outside-meal-container">
     <h1 className="grid-x align-center">My Meals</h1>
