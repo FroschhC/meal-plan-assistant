@@ -16,15 +16,24 @@
 
  */
 .meal-card {
-  width: 400px;
-  height: 500px;
+  width: 300px;
+  height: 400px;
   margin: 5px;
   border-radius: 1rem;
+  border: 2px solid #8e8e8e;
 }
 
+.top-bar{
+  background-color: #305973;
+}
+
+.meal-plan-card {
+  width: 150px;
+  height: 200px;
+}
 .card-divider{
   padding: 4px;
-  margin-bottom: 4px;
+  margin-bottom: 1px;
 }
 
 .meal-card-section {
@@ -38,7 +47,7 @@
 
 .subcat {
   font-size: 1em;
-  background-color: #e7ffd6;
+  background-color: #FFFDFB;
   border-radius: 1rem;
 }
 
@@ -84,10 +93,11 @@
 .pro-photo {
   height: 10rem;
   width: 10rem;
-  border: 5px solid black;
+  border: 5px solid #EF7E56;
   float: center;
   border-radius: 50%;
   margin-bottom: 30px;
+  background-color: white;
 }
 
 .red {
@@ -175,11 +185,103 @@
   width: 10rem;
 }
 
+.meal-container{
+  align: center;
+  background: #305973;
+  margin: 1% 5%;
+  border-radius: 1rem;
+  padding: 2%;
+  border: 2px solid #8e8e8e;
+}
+
+.outside-meal-container {
+    background: #DED5C4;
+    padding: 1px;
+    margin: 5% 2%;
+    border: 2px solid #8e8e8e;
+}
 .item-delete {
   /*padding-left: 50%;
   padding-right: 50%;*/
 }
 
+.items-strip{
+  background-color: #e6e6e6;
+  height:20px;
+  font-size: .8rem;
+}
+
 .item-form{
-  
+
+}
+
+.nut-facts{
+  background-color: #DED5C4;
+  border: 2px solid #8e8e8e;
+  height:142px;
+}
+
+.items-section {
+  background-color: #F9F9F9;
+}
+
+.each-item {
+  border-radius: .4rem;
+}
+
+.meal-form {
+  background-color: #DED5C4;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  border: 2px solid #8e8e8e;
+}
+
+.form {
+  background-color: #305973;
+  border-radius: 1rem;
+  padding: 2rem 5rem;
+}
+
+.meal-plan-strip {
+    background-color: #305973;
+    margin: 0% 1%;
+}
+
+.meal-plan-title {
+  background-color: #DED5C4;
+  border: 2px solid #8e8e8e;
+  padding: 1px;
+}
+
+.cook-background {
+  background-image: url("http://vectorpage.com/uploads/2015/03/Food-Flat-Icons-vector.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.form-title{
+    color: #F9F9F9;
+}
+
+.users-nav {
+  background-color: #305973;
+  /*float:center;
+  width: 50%;*/
+}
+
+body {
+  background-color: #F9F9F9;
+}
+
+.form-button{
+  color: #F9F9F9;
+  background-color: #0881A3;
+  border-radius: 1rem;
+  width: 200px;
+}
+
+.item-button{
+  width: 100%;
 }

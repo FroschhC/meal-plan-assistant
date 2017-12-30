@@ -13,7 +13,7 @@ const ItemTile = props => {
       <h6 className='grid-x light-yellow'>Fat: {props.fat}</h6>
       </div>
 
-      <button className="button card-divider grid-x align-center item-delete" onClick={props.handleDelete.bind(this, props.id)}>Delete Item from Meal</button>
+      <button className="button item-button card-divider grid-x align-center item-delete" onClick={props.handleDelete.bind(this, props.id)}>Delete Item from Meal</button>
 
     </div>
   )

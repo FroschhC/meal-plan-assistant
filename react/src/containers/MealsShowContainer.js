@@ -113,14 +113,14 @@ class MealsShowContainer extends Component {
         <div className="small-12 center">
         <Link to="/">Back to User Page</Link>
         </div>
-        <div className="grid-x callout card whole-meal">
+        <div className="grid-x card whole-meal outside-meal-container">
         <div className="grid-x align-center card-divider">
         <h1>{this.state.title}</h1>
         </div>
         <div className="grid-x align-center subcat">
         <h4>{this.state.category}</h4>
         </div>
-        <div className='callout'>
+        <div className='meal-container'>
           {allitems}
         </div>
         <div className="grid-x align-center callout card-divider">
