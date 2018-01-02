@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import Draggable, {DraggableCore} from 'react-draggable';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 const MealPlanTile = props => {
 
@@ -26,21 +26,19 @@ const MealPlanTile = props => {
     )
   })
 
+
   return(
-    <div className="meal-plan-card">
-    <div className='card meal-plan-card large-3 medium-6 small-12'>
+    <div className='card  meal-plan-card large-3 medium-1 small-1'>
       <Link to={`/meals/${props.id}`}>
       <div className="card-divider grid-x">
-        <h4 className="small-12 cell center">{props.title}</h4><h4 className="small-12 cell center subcat">{props.category}</h4>
+        <h4 className="meal-title small-12 cell center">{props.title}</h4><h4 className="meal-title small-12 cell center subcat">{props.category}</h4>
       </div>
       </Link>
-
         <h6 className="card-divider align-center">Items: {totalItems}</h6>
-        <h6 className="card-divider align-center">Calories: {calories}</h6>
+        {/* <h6 className="card-divider align-center">Calories: {calories}</h6>
         <h6 className="card-divider align-center">Protein: {protein}</h6>
         <h6 className="card-divider align-center">Fat: {fat}</h6>
-        <h6 className="card-divider align-center">Carbs: {carbohydrates}</h6>
-    </div>
+        <h6 className="card-divider align-center">Carbs: {carbohydrates}</h6> */}
   </div>
   )
 }

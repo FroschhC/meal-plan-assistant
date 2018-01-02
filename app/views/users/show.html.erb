@@ -1,11 +1,12 @@
+<div class="backdrop">
 <div class="grid-x align-center">
 <h1 class="name"><%= @user.user_name %></h1>
 </div>
 <div class="grid-x align-center">
 <img class="avatar grid-x align-center pro-photo" src="<%= @user.avatar %>"/>
 </div>
-</div>
 <div class="grid-x align-center users-nav">
 <h4><%= link_to "Edit your profile", edit_user_registration_path %></h4>
+</div>
 </div>
 <div id='app'></div>
