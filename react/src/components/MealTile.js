@@ -54,6 +54,9 @@ class MealTile extends Component {
   return connectDragSource(
     <div>
     <div className='card meal-card large-3 medium-6 small-12'>
+      <div className="card-divider grid-x">
+      <button className="button small-12 cell right add-meal">Add to Meal Plan</button>
+      </div>
       <Link to={`/meals/${this.props.id}`}>
       <div className="card-divider grid-x">
         <h4 className="meal-title small-12 cell center">{this.props.title}</h4><h4 className="meal-title small-12 cell center subcat">{this.props.category}</h4>

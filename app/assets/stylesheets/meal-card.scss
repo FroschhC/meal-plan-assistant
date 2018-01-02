@@ -1,0 +1,13 @@
+.meal-card:hover {
+  transform: scale(1.05);
+  border: 4px solid #8e8e8e;
+}
+
+.meal-card:hover  {
+  transform: scale(1.05);
+  border: 4px solid #8e8e8e;
+
+  .add-meal {
+    display: block !important;
+  }
+}

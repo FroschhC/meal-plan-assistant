@@ -24,15 +24,31 @@
   transition: transform .7s
 }
 
-.meal-card:hover {
+/*.meal-card:hover {
   transform: scale(1.05);
   border: 4px solid #8e8e8e;
-}
+}*/
 
 .top-bar{
   background-color: #305973;
   border-bottom: 2px solid #8e8e8e;
 
+}
+
+.add-meal {
+  color: black;
+  font-size: .7rem;
+  height: .5px;
+  background-color: #fcbda6;
+  border-radius: 1rem;
+  font-family: 'Overlock', cursive;
+  display: none;
+}
+
+.add-meal:hover {
+  background-color: #EF7E56;
+  color: black;
+  border: 2px solid #8e8e8e;
 }
 
 .meal-plan-card {
