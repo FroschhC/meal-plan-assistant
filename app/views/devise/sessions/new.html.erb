@@ -1,6 +1,8 @@
-<div class="">
-<h2 class="grid-x align-center">Log in</h2>
-<div class="grid-x align-center callout log-in meal-form">
+<div class="log-in-background">
+<h2 class="grid-x align-center title"></h2>
+<h2 class="grid-x align-center Web-name">MyPrepChef</h2>
+<div class="grid-x align-center callout log-in">
+  <h2 class="grid-x align-center title">Log in</h2>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -20,12 +22,15 @@
   <% end -%>
 <div class="grid-x align-center">
   <div class="actions">
-    <%= f.submit "Sign In" %>
+    <button><%= f.submit "Sign In" %></button>
   </div>
 </div>
+<br>
+<%= link_to "Not a Member yet? Sign up here", new_user_registration_path%>
   </div>
 <% end %>
 <div class="grid-x align-center">
-<%= link_to "Not a Member yet? Sign up here", new_user_registration_path%>
 </div>
+</div>
+<div class="space">
 </div>

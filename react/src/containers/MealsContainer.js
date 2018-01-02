@@ -4,6 +4,9 @@ import MealPlanContainer from './MealPlanContainer';
 import { Link } from 'react-router';
 import MealTile from '../components/MealTile';
 import { browserHistory} from 'react-router';
+import HTML5Backend from 'react-dnd-html5-backend'
+import {DragDropContext} from 'react-dnd';
+
 
 class MealsContainer extends Component {
   constructor(props){
@@ -83,6 +86,7 @@ class MealsContainer extends Component {
   .catch(error => console.error(`Error in fetch: ${error.message}`));
 }
 
+
   render(){
     let meals = this.state.meals.map((meal, i) => {
       return(
@@ -110,7 +114,7 @@ class MealsContainer extends Component {
           <button className="button" id="newMealButton" onClick={this.toggleForm}><span>Add New Meal</span></button>
         </div>
         <div className="outside-meal-container">
-    <h1 className="grid-x align-center">My Meals</h1>
+    <h1 className="grid-x align-center brake-titles">My Meals</h1>
       <div className="grid-x align-center meal-container">
     <div className="grid-x align-center">
           {meals}
@@ -122,4 +126,4 @@ class MealsContainer extends Component {
   }
 }
 
-export default MealsContainer;
+export default DragDropContext(HTML5Backend)(MealsContainer);

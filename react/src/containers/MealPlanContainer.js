@@ -4,6 +4,21 @@ import { Link } from 'react-router';
 import MealTile from '../components/MealTile';
 import MealPlanTile from '../components/MealPlanTile';
 import { browserHistory} from 'react-router';
+import {DropTarget} from 'react-dnd';
+
+
+const listTarget = {
+  drop: function(props, monitor) {
+    let meal = monitor.internalMonitor.registry.pinnedSource.props
+    moveMeal(meal)
+  }
+}
+
+function collect(connect, monitor) {
+  return {
+    connectDropTarget: connect.dropTarget()
+  };
+}
 
 class MealPlanContainer extends Component {
   constructor(props){
@@ -11,7 +26,11 @@ class MealPlanContainer extends Component {
     this.state = {
       mealPlan: []
     }
+    this.moveMeal=this.moveMeal.bind(this)
+  }
 
+  moveMeal(meal){
+    debugger
   }
 
   componentDidMount(){
@@ -41,6 +60,8 @@ class MealPlanContainer extends Component {
 
 
   render(){
+    const {connectDropTarget} = this.props
+
     let meals = this.state.mealPlan.map(meal => {
       return(<MealPlanTile
         key={meal.id}
@@ -69,12 +90,12 @@ class MealPlanContainer extends Component {
       })
     })
 
-    return(
-      <div className="callout">
-        <h1 className="grid-x align-center">My Meal Plan</h1>
-      <div className="meal-plan-strip">
+    return connectDropTarget(
+    <div className="grid-x align-center meal-plan-title">
+        <h1 className="grid-x align-center brake-titles">My Meal Plan</h1>
+      <div className="grid-x align-center meal-container">
         {meals}
-        <div className="grid-x align-center card-divider">
+        <div className="grid-x align-center">
           <h6 className="grid-x align-center red">Total Calories: {calories}</h6>
           <h6 className="grid-x align-center green"> Total Protein: {protein}</h6>
           <h6 className="grid-x align-center blue">Total Carbohydrates: {carbohydrates}</h6>
@@ -86,4 +107,4 @@ class MealPlanContainer extends Component {
   }
 }
 
-export default MealPlanContainer;
+export default DropTarget('meal', listTarget, collect)(MealPlanContainer);

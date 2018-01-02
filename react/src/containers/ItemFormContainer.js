@@ -56,7 +56,7 @@ class ItemFormContainer extends Component {
   render(){
     return(
       <div>
-        <h4 className="grid-x align-center">Add New Items to the Meal</h4>
+        <h4>Add New Items to the Meal</h4>
           <Test
             id="itemOne"
             label="Item:"

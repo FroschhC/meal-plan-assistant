@@ -44,7 +44,7 @@ class MealFormContainer extends Component {
       <div id="newMeal">
         <div className="grid-x align-center">
       <div className="meal-form">
-        <h1>Create a new meal</h1>
+        <h1 className="brake-titles">Create a new meal</h1>
       <div className="grid-x align-center">
         <MealForm
           addNewMeal = {this.addNewMeal}

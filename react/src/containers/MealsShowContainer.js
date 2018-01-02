@@ -115,15 +115,15 @@ class MealsShowContainer extends Component {
         </div>
         <div className="grid-x card whole-meal outside-meal-container">
         <div className="grid-x align-center card-divider">
-        <h1>{this.state.title}</h1>
+        <h1 className="meal-title">{this.state.title}</h1>
         </div>
         <div className="grid-x align-center subcat">
-        <h4>{this.state.category}</h4>
+        <h4 className="meal-title">{this.state.category}</h4>
         </div>
         <div className='meal-container'>
           {allitems}
         </div>
-        <div className="grid-x align-center callout card-divider">
+        <div className="grid-x align-center">
           <h6 className="grid-x align-center red">Total Calories: {calories}</h6>
           <h6 className="grid-x align-center green"> Total Protein: {protein}</h6>
           <h6 className="grid-x align-center blue">Total Carbohydrates: {carbohydrates}</h6>
@@ -131,7 +131,7 @@ class MealsShowContainer extends Component {
         </div>
       </div>
     </div>
-      <div>
+      <div className="apiForm">
         <ItemFormContainer
           mealId={this.state.id}
           getData={this.getData}

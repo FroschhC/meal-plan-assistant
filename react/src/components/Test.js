@@ -117,9 +117,9 @@ class Test extends React.Component {
       return( <option key={i} onClick={this.props.onSubmit}>{item.food_name} - Serving:{item.serving_qty} {item.serving_unit} - {calories} - {protein} - {fat} - {carbohydrates}</option> )
     })
     return (
-      <div className="grid-x align-center item-form">
+      <div>
         <form onSubmit={this.handleFormSubmit}>
-        <input name={this.props.name} placeholder="New Item" className="app_input" ref="query" type="text" list="itemOne" onChange={ (e) => this.updateSearch() }/>
+        <input name={this.props.name} placeholder="Search food item..." className="app_input" ref="query" type="text" list="itemOne" onChange={ (e) => this.updateSearch() }/>
         <datalist id="itemOne" value={this.props.value} onChange={this.props.onChange}>
           {items}
         </datalist>

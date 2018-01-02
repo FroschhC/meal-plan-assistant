@@ -25,26 +25,44 @@
 }
 
 .meal-card:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
   border: 4px solid #8e8e8e;
 }
 
 .top-bar{
   background-color: #305973;
+  border-bottom: 2px solid #8e8e8e;
+
 }
 
 .meal-plan-card {
-  width: 150px;
-  height: 200px;
+  width: 100px;
+  height: 110px;
+  border-radius: 1rem;
+  border: 4px solid #8e8e8e;
 }
+
+.meal-plan-card:hover {
+  transform: scale(1.1);
+}
+
 .card-divider{
   padding: 4px;
   margin-bottom: 1px;
 }
 
+.title {
+  padding-top: 1%;
+  font-family: 'Neucha', cursive;
+  font-size: 5rem;
+}
 .meal-card-section {
   height: 80px;
   overflow-y: scroll;
+}
+
+.meal-title{
+ font-family: 'Neucha', cursive;
 }
 
 .user-name {
@@ -93,17 +111,30 @@
 }
 
 .log-in {
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 30%;
+  margin-right: 35%;
+  margin-top: 2%;
+  margin-bottom: 25%;
+  background-color: #DED5C4;
+  border-radius: 1rem;
+  width: 35%;
+}
+
+.Web-name{
+  font-size: 6rem;
+  margin-top: 5%;
+  padding-right: 4%;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
 }
 
 .pro-photo {
   height: 10rem;
   width: 10rem;
-  border: 5px solid #EF7E56;
+  border: 8px solid #EF7E56;
   float: center;
   border-radius: 50%;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   background-color: white;
 }
 
@@ -201,9 +232,9 @@
 .meal-container{
   align: center;
   background: #305973;
-  margin: 1% 5%;
+  margin: 1% 7%;
   border-radius: 1rem;
-  padding: 2%;
+  padding: 4%;
   border: 2px solid #8e8e8e;
 }
 
@@ -225,13 +256,18 @@
 }
 
 .item-form{
-
+  margin-left: 25%;
+  width: 50%;
+  background-color: #DED5C4;
+  padding: 2rem;
+  border: 2px solid #8e8e8e;
 }
 
 .nut-facts{
   background-color: #DED5C4;
   border: 2px solid #8e8e8e;
   height:142px;
+  font-family: open-sans;
 }
 
 .items-section {
@@ -259,8 +295,8 @@
 
 .meal-plan-strip {
     background-color: #305973;
-    margin-left: 2%;
-      border-radius: 1rem;
+    margin: 2%;
+    border-radius: 1rem;
 }
 
 .meal-plan-title {
@@ -269,25 +305,31 @@
   border-radius: 1rem;
 }
 
-.cook-background {
-  background-image: url("http://vectorpage.com/uploads/2015/03/Food-Flat-Icons-vector.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
+.backdrop {
+  background-image: url("https://image.freepik.com/vector-gratis/utensilios-de-cocina-en-los-estantes_23-2147505429.jpg");
+  /*background-repeat: no-repeat;*/
+  background-size: 33.5%;
+  /*opacity: 0.5;*/
 }
 
 .form-title{
     color: #F9F9F9;
 }
 
+.brake-titles{
+ font-family: 'Overlock', cursive;
+  font-size: 4.5rem;
+}
+
 .users-nav {
   background-color: #305973;
-  margin-left: 25%;
-  margin-right: 25%;
-  width: 50%;
+  width: 100%;
+  height: 2.5rem;
+  border: 2px solid #8e8e8e;
 }
 
 body {
-  background-color: #F9F9F9;
+  background-color: #edeeef;
 }
 
 .form-button{
@@ -302,7 +344,16 @@ body {
 }
 
 .name {
+  background-color: #305973;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 1%;
   margin: 1%;
+  color: white;
+  border-radius: .8rem;
+  font-size: 5rem;
+  border: 2px solid #8e8e8e;
+  font-family: 'Neucha', cursive;
 }
 
 .meal-plan-card {
@@ -350,4 +401,36 @@ body {
 
 #newMeal {
     display: none;
+}
+
+a:link {
+  color: black;
+}
+
+a:hover {
+    color: #EF7E56;
+}
+
+input {
+  /*width: 30%;*/
+}
+
+.app-input {
+  width: 20px;
+}
+
+.apiForm {
+  height: 40em;
+}
+
+.log-in-background {
+  background-image: url("https://i.pinimg.com/originals/d6/a0/95/d6a095689208be7d8e3a6e0ed34c6e49.jpg");
+  /*background-repeat: no-repeat;*/
+  background-size: 100%;
+}
+
+.space{
+  height:9rem;
+  background-color: #DED5C4;
+  border-top: 2px solid #8e8e8e;
 }
