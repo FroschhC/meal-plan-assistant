@@ -11,4 +11,5 @@ class User < ApplicationRecord
 
   has_many :meals
   has_many :items
+  has_one :meal_plan
 end

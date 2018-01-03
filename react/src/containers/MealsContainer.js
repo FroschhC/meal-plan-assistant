@@ -19,7 +19,33 @@ class MealsContainer extends Component {
     this.handleDelete=this.handleDelete.bind(this)
     this.deleteMeal=this.deleteMeal.bind(this)
     this.toggleForm=this.toggleForm.bind(this)
+    this.addToPlan=this.addToPlan.bind(this)
   }
+
+  addToPlan(id){
+    fetch('/api/v1/meal_plan_meals', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(id),
+      credentials: 'same-origin'
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+      this.getData()
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+    }
 
   toggleForm(event){
     let mealForm = document.getElementById('newMeal');
@@ -97,6 +123,7 @@ class MealsContainer extends Component {
           category={meal.category}
           handleDelete={this.handleDelete}
           items={meal.items}
+          addToPlan={this.addToPlan}
         />
       )
     })
@@ -114,9 +141,9 @@ class MealsContainer extends Component {
           <button className="button" id="newMealButton" onClick={this.toggleForm}><span>Add New Meal</span></button>
         </div>
         <div className="outside-meal-container">
-    <h1 className="grid-x align-center brake-titles">My Meals</h1>
-      <div className="grid-x align-center meal-container">
-    <div className="grid-x align-center">
+          <h1 className="grid-x align-center brake-titles">My Meals</h1>
+        <div className="grid-x align-center meal-container">
+        <div className="grid-x align-center">
           {meals}
         </div>
         </div>

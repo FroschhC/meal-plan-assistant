@@ -6,7 +6,6 @@ import MealPlanTile from '../components/MealPlanTile';
 import { browserHistory} from 'react-router';
 import {DropTarget} from 'react-dnd';
 
-
 const listTarget = {
   drop: function(props, monitor) {
     let meal = monitor.internalMonitor.registry.pinnedSource.props
@@ -26,11 +25,31 @@ class MealPlanContainer extends Component {
     this.state = {
       mealPlan: []
     }
-    this.moveMeal=this.moveMeal.bind(this)
+    this.deletePlanMeal=this.deletePlanMeal.bind(this)
   }
 
-  moveMeal(meal){
-    debugger
+    deletePlanMeal(id){
+    if(confirm('Are you sure you want to delete this meal from the plan?')) {
+    fetch(`/api/v1/meal_plan_meals/${id}`, {
+      method: 'DELETE',
+      credentials: 'same-origin'
+    })
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`,
+        error = new Error(errorMessage);
+        throw(error);
+      }
+    })
+    .then(response => response.json())
+    .then(body => {
+        this.getData();
+        browserHistory.push('/')
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
+    }
   }
 
   componentDidMount(){
@@ -69,6 +88,7 @@ class MealPlanContainer extends Component {
         title={meal.title}
         category={meal.category}
         items={meal.items}
+        deleteMeal={this.deletePlanMeal}
       />
       )
     })
