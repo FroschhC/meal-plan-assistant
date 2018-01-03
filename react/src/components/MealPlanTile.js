@@ -35,6 +35,7 @@ const MealPlanTile = props => {
       </div>
       </Link>
         <h6 className="card-divider align-center">Items: {totalItems}</h6>
+        <button className="grid-x align-center button meal-plan-card-button" onClick={props.deleteMeal.bind(this, props.id)}>Delete Meal from Plan</button>
         {/* <h6 className="card-divider align-center">Calories: {calories}</h6>
         <h6 className="card-divider align-center">Protein: {protein}</h6>
         <h6 className="card-divider align-center">Fat: {fat}</h6>

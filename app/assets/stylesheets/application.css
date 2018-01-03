@@ -53,9 +53,24 @@
 
 .meal-plan-card {
   width: 100px;
-  height: 110px;
+  height: 125px;
   border-radius: 1rem;
   border: 4px solid #8e8e8e;
+}
+
+.meal-plan-card-button {
+  font-size: .7rem;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-left: 1.5%;
+  width: 97%;
+  border-radius: 1rem;
+  background-color: #fcbda6;
+}
+
+.meal-plan-card-button:hover {
+  border: 1px solid #8e8e8e;
+  background-color: #EF7E56;
 }
 
 .meal-plan-card:hover {

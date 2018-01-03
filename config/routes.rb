@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :meal_plans, only: [:index, :show, :edit]
+      resources :meal_plans, only: [:index, :show, :edit, :create]
+       resources :meal_plan_meals, only: [:index, :create, :show, :destroy]
     end
   end
 

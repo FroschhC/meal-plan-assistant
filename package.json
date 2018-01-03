@@ -49,6 +49,7 @@
     "react-dnd-html5-backend": "^2.5.4",
     "react-dom": "^15.6.1",
     "react-draggable": "^3.0.4",
+    "react-popup": "^0.9.1",
     "react-router": "^3.0.2",
     "webpack": "^2.6.0"
   }

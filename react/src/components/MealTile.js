@@ -55,7 +55,7 @@ class MealTile extends Component {
     <div>
     <div className='card meal-card large-3 medium-6 small-12'>
       <div className="card-divider grid-x">
-      <button className="button small-12 cell right add-meal">Add to Meal Plan</button>
+      <button className="button small-12 cell right add-meal" onClick={this.props.addToPlan.bind(this, this.props.id)}>Add to Meal Plan</button>
       </div>
       <Link to={`/meals/${this.props.id}`}>
       <div className="card-divider grid-x">
