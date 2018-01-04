@@ -28,7 +28,8 @@ const MealPlanTile = props => {
 
 
   return(
-    <div className='card  meal-plan-card large-3 medium-1 small-1'>
+    <div>
+    <div className='card meal-plan-card large-1 medium-6 small-12'>
       <Link to={`/meals/${props.id}`}>
       <div className="card-divider grid-x">
         <h4 className="meal-title small-12 cell center">{props.title}</h4><h4 className="meal-title small-12 cell center subcat">{props.category}</h4>
@@ -41,6 +42,7 @@ const MealPlanTile = props => {
         <h6 className="card-divider align-center">Fat: {fat}</h6>
         <h6 className="card-divider align-center">Carbs: {carbohydrates}</h6> */}
   </div>
+</div>
   )
 }
 

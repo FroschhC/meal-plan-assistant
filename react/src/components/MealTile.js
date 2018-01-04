@@ -54,8 +54,8 @@ class MealTile extends Component {
   return connectDragSource(
     <div>
     <div className='card meal-card large-3 medium-6 small-12'>
-      <div className="card-divider grid-x">
-      <button className="button small-12 cell right add-meal" onClick={this.props.addToPlan.bind(this, this.props.id)}>Add to Meal Plan</button>
+      <div className="card-divider addmealdivider grid-x">
+      <button className="button small-4 cell right add-meal" onClick={this.props.addToPlan.bind(this, this.props.id)}>Add to Plan</button>
       </div>
       <Link to={`/meals/${this.props.id}`}>
       <div className="card-divider grid-x">

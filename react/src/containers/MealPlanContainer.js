@@ -111,18 +111,20 @@ class MealPlanContainer extends Component {
     })
 
     return connectDropTarget(
-    <div className="grid-x align-center meal-plan-title">
-        <h1 className="grid-x align-center brake-titles">My Meal Plan</h1>
-      <div className="grid-x align-center meal-container">
-        {meals}
+      <div>
+      <div className="grid-x align-center meal-plan-container">
         <div className="grid-x align-center">
+        {meals}
+      </div>
+      </div>
+        <div className="grid-x align-center meal-facts">
           <h6 className="grid-x align-center red">Total Calories: {calories}</h6>
           <h6 className="grid-x align-center green"> Total Protein: {protein}</h6>
           <h6 className="grid-x align-center blue">Total Carbohydrates: {carbohydrates}</h6>
           <h6 className="grid-x align-center yellow">Total Fat: {fat}</h6>
         </div>
       </div>
-    </div>
+
     )
   }
 }

@@ -131,6 +131,7 @@ class MealsContainer extends Component {
     return(
       <div>
         <div className="meal-plan-strip">
+          <h1 className="grid-x align-center brake-titles">My Meal Plan</h1>
           <MealPlanContainer
           />
         </div>
