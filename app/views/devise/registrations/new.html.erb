@@ -1,19 +1,20 @@
-
-<div class="grid-x grid-padding-x callout">
-  <div class="medium-7 large-7 cell">
-  <h4>Who are we?<h4>
-  <h6>ewqqweruqweoriuwoieruiqoweruoiqeuwroiuqweropiuqweoir</h6>
-  <h4>How can we help you?</h4>
-  <h6>sadjfhdfjkhakjsdfhkjashdfkjsfsadfsadfasfdasdfadfasdf</h6>
-  <h4>What is our mission?</h4>
-  <h6>dfsfsdafasdfadsfasdfasdfasdfasdfasdfasdfasdfasdfasdf</h6>
+<div class="log-in-background">
+<div class="grid-x grid-padding-x log-in-background">
+  <div class="medium-6 large-6 cell FAQ">
+  <h4 class="FAQ-title">What is MyPrepChef?<h4>
+  <h5 style="font-family: 'Neucha', cursive;">- An application designed to simplify meal planning for users.</h5>
+  <h4 class="FAQ-title">How can we help you?</h4>
+  <h5 style="font-family: 'Neucha', cursive;">- By joining us, you will have access to the right tools so that you can live a healthier life. Our Application will allow you create meals from scratch, and to track the nutritional value inside of them.</h5>
+  <h4 class="FAQ-title">What is our mission?</h4>
+  <h5 style="font-family: 'Neucha', cursive;">- Our mission is to promote a healthier lifestyle and to make it easier for people to track their food consumption on a daily basis. </h5>
+  <img src="https://img.clipartxtras.com/308381c330c49d1f2bb85781e6eedb62_fork-clipart-black-and-white-clipart-panda-free-clipart-images-fork-and-knife-clipart-black-and-white_620-481.svg" class="plate-photo">
   </div>
-  <!-- <div class="cook-background medium-4 large-4 cell">
-  </div> -->
-  <div class="medium-4 large-4 cell callout align-center meal-form">
+  <div class="medium-1 large-1 cell">
+  </div>
+  <div class="medium-4 large-4 cell align-center sign-up-form">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-    <h2>Sign up</h2>
+    <h4 class="sign-up-title">Sign up</h4>
   <div class="field">
     <%= f.label :first_name, 'First Name' %>
     <%= f.text_field :first_name, autofocus: true %>
@@ -55,6 +56,7 @@
 <% end %>
 <div class="grid-x align-center">
 <%= link_to "Already a Member? Sign In Here", new_user_session_path %>
+</div>
 </div>
 </div>
 </div>

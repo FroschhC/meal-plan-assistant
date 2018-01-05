@@ -123,7 +123,9 @@ class Test extends React.Component {
         <datalist id="itemOne" value={this.props.value} onChange={this.props.onChange}>
           {items}
         </datalist>
-        <input  className="button" type="submit" value="Add Item"/>
+        <div className="grid-x align-center">
+        <input className="button addItemButton" type="submit" value="Add Item"/>
+        </div>
         </form>
       </div>
     );

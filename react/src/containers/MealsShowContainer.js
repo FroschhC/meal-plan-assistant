@@ -111,7 +111,7 @@ class MealsShowContainer extends Component {
     <div>
       <div className="grid-x align-center">
         <div className="small-12 center">
-        <Link to="/">Back to User Page</Link>
+        <Link className="userLink" to="/">Back to User Page</Link>
         </div>
         <div className="grid-x card whole-meal outside-meal-container">
         <div className="grid-x align-center card-divider">
@@ -131,12 +131,15 @@ class MealsShowContainer extends Component {
         </div>
       </div>
     </div>
+    <div className="apiFormOutside">
       <div className="apiForm">
+        <h4 className="grid-x align-center apiFormHead">Add New Items</h4>
         <ItemFormContainer
           mealId={this.state.id}
           getData={this.getData}
         />
       </div>
+    </div>
     </div>
     )
   }
