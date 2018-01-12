@@ -7,7 +7,8 @@ class MealFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      meals: []
+      meals: [],
+      errors: []
     }
     this.addNewMeal=this.addNewMeal.bind(this)
   }
@@ -22,7 +23,7 @@ class MealFormContainer extends Component {
     credentials: 'same-origin'
   })
   .then(response => {
-    if (response.ok) {
+    if (response.ok || response.status === 422) {
       return response;
     } else {
       let errorMessage = `${response.status} (${response.statusText})`,
@@ -32,19 +33,27 @@ class MealFormContainer extends Component {
   })
   .then(response => response.json())
   .then(body => {
-    this.props.getData()
-    browserHistory.push(`/`)
+    if ('error' in body) {
+        this.setState({ errors: body['error'] })
+      } else {
+        this.props.getData()
+        browserHistory.push(`/`)
+      }
   })
   .catch(error => console.error(`Error in fetch: ${error.message}`));
-  }
+}
 
   render(){
+    let errors = this.state.errors.map(error => {
+      return( <h3 className="errors">{error}</h3> )
+    })
 
     return(
       <div id="newMeal">
         <div className="grid-x align-center">
       <div className="meal-form animated zoomIn">
         <h1 className="brake-titles">Create a new meal</h1>
+        {errors}
       <div className="grid-x align-center">
         <MealForm
           addNewMeal = {this.addNewMeal}

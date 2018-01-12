@@ -15,7 +15,8 @@ class ItemFormContainer extends Component {
       calories: '',
       protein: '',
       fats: '',
-      carbohydrates: ''
+      carbohydrates: '',
+      errors: []
     }
     this.onChange=this.onChange.bind(this)
     this.addNewItem=this.addNewItem.bind(this)
@@ -36,7 +37,7 @@ class ItemFormContainer extends Component {
     credentials: 'same-origin'
   })
   .then(response => {
-    if (response.ok) {
+    if (response.ok || response.status === 422) {
       return response;
     } else {
       let errorMessage = `${response.status} (${response.statusText})`,
@@ -46,16 +47,25 @@ class ItemFormContainer extends Component {
   })
   .then(response => response.json())
   .then(body => {
-    this.props.getData();
-  })
+    if ('error' in body) {
+        this.setState({ errors: body['error'] })
+      } else {
+        this.props.getData();
+      }
+    })
   .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
 
 
   render(){
+    let errors = this.state.errors.map(error => {
+      return( <li className="errors">{error}</li> )
+    })
+
     return(
       <div>
+        {errors}
           <Test
             id="itemOne"
             label="Item:"
